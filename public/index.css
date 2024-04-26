@@ -1,0 +1,213 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+header {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 100px;
+}
+
+.appname {
+  margin-top: 40px;
+}
+
+.appname h1 {
+  display: inline;
+  font-size: 36px;
+  color: #6c0345;
+}
+
+.nav-links {
+  margin-top: 40px;
+  position: relative;
+}
+
+.nav-links ul {
+  display: flex;
+  list-style: none;
+  padding: 0 0;
+}
+
+.nav-links ul li {
+  margin-right: 20px;
+}
+
+.nav-links ul a {
+  margin-left: 100px;
+  text-decoration: none;
+  font-weight: bold;
+  color: #dc6b19;
+  font-size: 24px;
+  border-bottom: 2px solid transparent;
+  transition: border-bottom-color 0.3s ease;
+  transition: all 0.2s ease;
+}
+
+.nav-links ul li a:hover {
+  color: #9a3b3b;
+  border-bottom-color: #9a3b3b;
+}
+
+.firstSection {
+  margin-top: 125px;
+  height: 500px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.sun-image img {
+  margin-left: 75px;
+  border-radius: 30%;
+}
+
+.info-ss {
+  margin-top: 35px;
+  margin-left: 100px;
+  margin-right: 20px;
+  font-size: 20px;
+}
+
+.secondSection {
+  margin-top: 125px;
+  margin-left: 70px;
+  height: 400px;
+}
+
+.container {
+  width: 500px;
+  margin: auto auto;
+  /* border: 2px solid red; */
+}
+.container form {
+  margin-top: 90px;
+}
+.container label {
+  font-weight: bold;
+  width: 200px;
+  margin-right: 50px;
+  font-size: 24px;
+}
+
+.container input[type="text"] {
+  width: 200px;
+  height: 35px;
+  box-sizing: border-box;
+  border: none;
+  border-bottom: 1px solid black;
+}
+
+.container input[type="submit"] {
+  margin-top: 40px;
+  background-color: black;
+  color: white;
+  width: 200px;
+  height: 35px;
+  border-radius: 10px;
+}
+
+#popup {
+  color: red;
+  width: 550px;
+  height: 200px;
+  background: white;
+  border-radius: 6px;
+  position: absolute;
+  top: -50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.1);
+  text-align: center;
+  transition: transform 0.4s top 0.4s;
+}
+
+.open-popup {
+  top: 150%;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+#popup button {
+  width: 100%;
+  margin-top: 50px;
+  padding: 10px 0;
+  background: #6fd649;
+  color: white;
+  border: 0;
+  outline: none;
+  font-size: 18px;
+  border-radius: 20px;
+  cursor: pointer;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+}
+
+.thirdSection {
+  display: flex;
+  justify-content: space-around;
+  height: 500px;
+  margin-left: 70px;
+}
+
+.developer {
+  margin-top: 35px;
+  margin-left: 100px;
+}
+.developer i {
+  color: black;
+}
+.feedback form {
+  width: 100%;
+}
+.feedback form input,
+form textarea {
+  width: 600px;
+  border: 0;
+  outline: none;
+  padding: 15px;
+  margin: 15px 0;
+  color: black;
+  font-size: 18px;
+  border: 2px solid #dc6b19;
+  border-radius: 6px;
+}
+
+form .btn {
+  margin-top: 40px;
+  background-color: black;
+  color: white;
+  width: 200px;
+  height: 35px;
+  border-radius: 10px;
+}
+
+footer {
+  background-color: #6c0345;
+}
+footer a {
+  text-decoration: none;
+  color: #fff8dc;
+}
+footer a:hover {
+  text-decoration: none;
+  color: #fff8dc;
+}
+
+.footer-first h2 {
+  color: #fff8dc;
+}
+.footer {
+  display: flex;
+  padding: 23px 112px;
+  justify-content: space-evenly;
+}
+.footer ul {
+  list-style-type: none;
+}
+footer .test-center {
+  text-align: center;
+  color: white;
+  padding: 12px 0;
+}

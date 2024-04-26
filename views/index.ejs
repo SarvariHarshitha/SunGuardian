@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SunGuardian</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="index.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="appname" id="appname">
+        <h1>SunGuardian</h1>
+      </div>
+
+      <div class="nav-links">
+        <ul>
+          <li><a href="#home"> Home </a></li>
+          <li><a href="#predict"> Predict </a></li>
+          <li><a href="#df"> Developers & Feedback </a></li>
+        </ul>
+      </div>
+    </header>
+
+    <div class="firstSection" id="home">
+      <div class="sun-image">
+        <img src="/images/ss.jpeg" />
+      </div>
+
+      <div class="info-ss">
+        <h1>How UV rays are harmful?</h1>
+        <p>
+          Ultraviolet (UV) rays from the sun can cause significant skin damage,
+          including sunburn, premature aging, and changes in skin texture. More
+          seriously, UV exposure can alter the DNA in skin cells, leading to
+          various skin cancers like melanoma and basal cell carcinoma.
+          Containing ingredients that shield against UV rays, its use is crucial
+          in daily skincare, particularly during prolonged outdoor exposure.
+          Regularly applying a broad-spectrum sunscreen helps reduce the risk of
+          skin damage and cancer, maintaining healthy, youthful skin.
+        </p>
+      </div>
+    </div>
+
+    <div class="secondSection" id="predict">
+      <h1>Know your city UV concentration :</h1>
+
+      <div class="container">
+        <form action="/submit" method="post" id="cityForm">
+          <label>Enter your city : </label
+          ><input type="text" name="city" placeholder="Enter Your City" />
+          <input
+            type="submit"
+            id="submit"
+            value="Submit"
+            class="submitData"
+            onclick="openPopup()"
+          />
+
+          <div class="answer">
+            <% if (locals.activity && locals.activity.result) { if
+            (locals.activity.result.uv >= 5) { %>
+            <h4
+              id="sunscreenMessage"
+              style="color: red; text-align: center; margin-top: 20px"
+            >
+              You are in <%= presentcity %> and the UV index of it is <%=
+              locals.activity.result.uv%>, Wear Sunscreen
+            </h4>
+            <% } else { %>
+            <h4
+              id="sunscreenMessage"
+              style="color: green; text-align: center; margin-top: 20px"
+            >
+              You are in <%= presentcity %> and the UV index of it is <%=
+              locals.activity.result.uv%>, No need of Sunscreen
+            </h4>
+            <% } } else { %>
+            <h4 id="sunscreenMessage"></h4>
+            <% } %>
+            <!-- <button type="button" onclick="closePopup()" id="closeButton">
+              Ok
+            </button> -->
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="thirdSection" id="df">
+      <div class="developers">
+        <h1>Developers & Feedback</h1>
+        <div class="developer">
+          <h2>Konda Sarvari Harshitha</h2>
+          <p>
+            <i class="fa-solid fa-paper-plane"></i> harshithakonda21@gmail.com
+          </p>
+          <p><i class="fa-solid fa-square-phone"></i> +91-9063075426</p>
+          <div class="social-icons">
+            <a
+              href="https://www.linkedin.com/in/sarvari-harshitha-konda"
+              target="_blank"
+              ><i class="fa-brands fa-linkedin"></i
+            ></a>
+            <a
+              href="https://www.instagram.com/sarvari_harshitha/"
+              target="_blank"
+              ><i class="fa-brands fa-instagram"></i
+            ></a>
+          </div>
+        </div>
+        <div class="developer">
+          <h2>Perla Pawan Phanieswar</h2>
+          <p><i class="fa-solid fa-paper-plane"></i> perlapawan25@gmail.com</p>
+          <p><i class="fa-solid fa-square-phone"></i> +91-9052533366</p>
+          <div class="social-icons">
+            <a href="https://www.linkedin.com/in/pawan-perla-629bb7264/"
+              ><i class="fa-brands fa-linkedin"></i
+            ></a>
+            <a href="https://www.instagram.com/_pawan25_/"
+              ><i class="fa-brands fa-instagram"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- FeedBack Form -->
+      <div class="feedback" id="feedback">
+        <form action="https://api.web3forms.com/submit" method="POST">
+          <input
+            type="hidden"
+            name="access_key"
+            value="c13d8132-c866-4508-8586-d23b9f122ef9"
+          />
+          <input
+            type="text"
+            name="Name"
+            placeholder="Your Name"
+            id="name"
+            required
+          /><br />
+          <input
+            type="email"
+            name="Email"
+            id="email"
+            placeholder="Your email"
+            required
+          /><br />
+          <textarea
+            name="Message"
+            rows="6"
+            placeholder="Your Message"
+            id="message"
+          ></textarea
+          ><br />
+          <button type="submit" class="btn">Submit</button>
+        </form>
+        <span id="msg"></span>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer">
+        <div class="footer-first">
+          <h2>SunGuardian</h2>
+        </div>
+        <div class="footer-second">
+          <ul>
+            <li><a href="#appname">Home</a></li>
+            <li><a href="#predict">Predict</a></li>
+            <li><a href="#feedback">Developers & Feedback</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="test-center">Copyright &copy; | All rights reserved</div>
+    </footer>
+  </body>
+  <script src=" https://smtpjs.com/v3/smtp.js"></script>
+  <!-- mail function -->
+  <script>
+    function sendEmail() {
+      Email.send({
+        Host: "smtp.gmail.com",
+        Username: "weicareprediction@gmail.com",
+        Password: "Psh@2023",
+        To: "weicareprediction@gmail.com",
+        From: document.getElementById("email").value,
+        Subject: "Enquiry on SunGuard",
+        Body:
+          "Name ->" +
+          document.getElementById("name").value +
+          "<br>" +
+          "Email -> " +
+          document.getElementById("email").value +
+          "<br>" +
+          "Message -> " +
+          document.getElementById("message").value,
+      }).then((msg) => alert(msg));
+    }
+  </script>
+  <!-- smooth scroll function -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const links = document.querySelectorAll('a[href^="#"]');
+
+      links.forEach((link) => {
+        link.addEventListener("click", smoothScroll);
+      });
+
+      function smoothScroll(e) {
+        e.preventDefault();
+
+        const targetId = this.getAttribute("href").substring(1);
+        const targetElement = document.getElementById(targetId);
+
+        window.scrollTo({
+          top:
+            targetElement.offsetTop -
+            document.querySelector("header").offsetHeight,
+          behavior: "smooth",
+        });
+      }
+    });
+  </script>
+  <!-- pop up -->
+</html>
